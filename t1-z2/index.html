@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>t1-z2</title>
+</head>
+<body>
+    <h1>Tydzien 1 - Zadanie 2: Selectory w jQuery</h1>
+    
+    <ul>
+        <li>wszystkie elementy &lt;div&gt;, posiadające zarówno klasę “grid” oraz klasę “grid-12”.
+        <p><code>$(".grid.grid-12");</code></p></li>
+        <li>wszystkie elementy &lt;a&gt;, których atrybut “href" zaczyna się na “http”, znajdujące się w
+elemencie o klasie “nav”
+       <p><code>$(".nav a[href^='http']");</code></p></li>
+        <li>wszystkie elementy &lt;input&gt;, których typ to “radio” lub “checkbox” oraz dodatkowo nie
+są aktualnie zaznaczone (checked).
+       <p><code>$("(input:radio, input:checkbox):not(:checked)"); </code></p></li>
+        <li>wyłącznie pierwszy element &lt;p&gt;, który jest pusty (nie zawiera dzieci) oraz znajduje się w
+elemencie &lt;div&gt; z identyfikatorem “text”
+       <p><code>$("#text p:empty");</code></p></li>
+        <li>wszystkie elementy z klasą “pagination-item”, które nie są elementem &lt;span&gt;.
+        <p><code>$(".pagination-item:not(span)")</code></p></li>
+    </ul>
+</body>
+</html>
