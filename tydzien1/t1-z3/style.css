@@ -1,0 +1,65 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+#container {
+    width: 960px;
+}
+
+span#toggle {
+    display: block;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+i:hover {
+    cursor: pointer;
+    
+}
+
+#nav {
+    background-color: #7bc143;
+    width: 20%;
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    transition: transform 0.5s;
+}
+
+#content {
+    width: 75%;
+    display: inline-block;
+    float: left;
+}
+
+li {
+    padding-bottom: 10px;
+    list-style: none;
+}
+
+a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav {
+    transition: transform 0.5s;
+    transform: translate(-200px, 0px);
+}
+
+.fa {
+    
+    transition: transform 0.5s;
+    
+}
+
+.fa-times {
+    transform: rotate(720deg);
+    
+    
+}
