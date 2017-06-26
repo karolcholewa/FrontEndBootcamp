@@ -1,6 +1,7 @@
 # Zadania na tydzień 2
 
-1. Polyfill metody repeat dla String
+## Z1) Polyfill metody repeat dla String
+
 W standardzie EcmaScript 2015 pojawiła się nowa metoda dostępna na obiektach typu
 String o nazwie repeat. Jej użycie wygląda następująco:
 
