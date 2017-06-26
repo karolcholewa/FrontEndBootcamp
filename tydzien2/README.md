@@ -4,7 +4,7 @@
 W standardzie EcmaScript 2015 pojawiła się nowa metoda dostępna na obiektach typu
 String o nazwie repeat. Jej użycie wygląda następująco:
 
-    “hej ”.repeat(3) // zwraca “hej hej hej ”
+        “hej ”.repeat(3) // zwraca “hej hej hej ”
     
 Metoda ta jest dostępna we wszystkich nowoczesnych przeglądarkach internetowych, ale
 aby poćwiczyć rozszerzanie wbudowanych typów, utwórz jej polyfill. W kodzie sprawdź
