@@ -1,47 +1,34 @@
-(function(){
-    
-    if (!String.prototype.repeat) {
-  String.prototype.repeat = function(count) {
+(function () {
+
     'use strict';
-    if (this == null) {
-      throw new TypeError('can\'t convert ' + this + ' to object');
+
+    //checking whether such method already exists
+    if (String.prototype.repeatt) {
+        return;
     }
-    var str = '' + this;
-    count = +count;
-    if (count != count) {
-      count = 0;
-    }
-    if (count < 0) {
-      throw new RangeError('repeat count must be non-negative');
-    }
-    if (count == Infinity) {
-      throw new RangeError('repeat count must be less than infinity');
-    }
-    count = Math.floor(count);
-    if (str.length == 0 || count == 0) {
-      return '';
-    }
-    // Ensuring count is a 31-bit integer allows us to heavily optimize the
-    // main part. But anyway, most current (August 2014) browsers can't handle
-    // strings 1 << 28 chars or longer, so:
-    if (str.length * count >= 1 << 28) {
-      throw new RangeError('repeat count must not overflow maximum string size');
-    }
-    var rpt = '';
-    for (;;) {
-      if ((count & 1) == 1) {
-        rpt += str;
-      }
-      count >>>= 1;
-      if (count == 0) {
-        break;
-      }
-      str += str;
-    }
-    // Could we try:
-    // return Array(count + 1).join(this);
-    return rpt;
-  }
-}
-    
+
+    //extending a String object prototype - adding a new, custom method
+    String.prototype.repeatt = function (count) {
+
+        //checking an exception; sometimes a value passed to the function can be calculated and returned by another function
+        if (count < 0) {
+            throw new Error("Invalid countr value. The countr value must be positive.");
+        }
+
+        var output = "",
+            myString = this.toString(); //this returns a string object - as it is converted by the interpreter; it is a good practice to convert it in the code to avoid ambiguity
+
+
+        for (var i = 0; i < count; i++) {
+
+            output += myString;
+        }
+
+        return output;
+
+    };
+
+    //shortened 'hack' version for the entire polyfill
+    //return (new Array(count + 1)).join( this.toString() ); 
+
 }());
