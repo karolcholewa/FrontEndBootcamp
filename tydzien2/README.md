@@ -17,3 +17,12 @@ wyżej sposób.
 taka metoda już istnieje, w nowoczesnych przeglądarkach otrzymasz odpowiedź
 pozytywną. Jeśli zatem napiszesz odpowiedni warunek, to nie będzie można przetestować
 Twojej metody. Z tego powodu, zamiast repeat możesz ją nazwać repeatt.
+
+
+## Z2) Dziedziczenie z klasy EventEmitter
+
+Przygotowany pod adresem http://pastebin.com/YEBncx0d kod zmodyfikuj tak, aby obiekty
+tworzone z klasy _Database_ mogły korzystać z wszystkich metody klasy _EventEmitter_. Na
+chwilę obecną, podany kod wygeneruje błąd, gdyż klasa _Database_ nie zawiera metody on
+oraz emit. Skorzystaj z dziedziczenia prototypowego aby klasą nadrzędną dla _Database_
+stała się klasa _EventEmitter_.
