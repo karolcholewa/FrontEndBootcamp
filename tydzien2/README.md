@@ -26,3 +26,36 @@ tworzone z klasy _Database_ mogły korzystać z wszystkich metody klasy _EventEm
 chwilę obecną, podany kod wygeneruje błąd, gdyż klasa _Database_ nie zawiera metody on
 oraz emit. Skorzystaj z dziedziczenia prototypowego aby klasą nadrzędną dla _Database_
 stała się klasa _EventEmitter_.
+
+## Z3) Ajaxowy polyfill dla funkcji fetch
+
+Napisz polyfill dla funkcji fetch (nie będziemy się tutaj trzymać dokładnie tego, w jaki
+sposób ona działa, stworzysz jedynie prostą jej wersję). Wykorzystaj obiekt
+XMLHttpRequest w ten sposób, aby docelowo korzystanie z funkcji fetch wyglądało
+następująco:
+
+        fetch("url", function(data) {
+        console.log("Sukces");
+        console.log(data);
+        }, function(err) {
+        console.log("Wystąpił błąd!");
+        console.log(err);
+        });
+    
+a zatem jako pierwszy argument przekazujemy adres URL (wyślij pod niego zapytanie
+"GET"), jako drugi funkcję, którą należy wykonać jeśli wszystko się powiedzie (przekaż jej
+pobrane dane), a jako trzeci funkcję, która wykona się na wypadek błędu (przekaż jej
+obiekt z błędem lub komunikat tekstowy). W nowoczesnych przeglądarkach istnieje już
+funkcja fetch, a zatem aby jej nie nadpisywać, możesz nadać jej inną nazwę. Jako adres
+URL, z którego pobierane bedą dane, możesz wykorzytać https://
+jsonplaceholder.typicode.com/user
+
+## Z4) Prywatność za pomocą domknięcia
+
+Dokończ pisanie przygotowanego pod adresem http://pastebin.com/aNKyCt3N kodu tak,
+aby nie generował błędów. Stwórz metody get oraz set nie korzystając z prototypów. Istotą
+działania funkcji createData jest zwrócenie obiektu, który zawierał będzie metody get oraz
+set. Metoda get powinna przyjmować klucz, np. “name” oraz zwracać wartość np.
+data[“name”], natomiast metoda set powinna przyjmować klucz i wartość, sprawdzać czy
+oba te parametry zostały podane, a następnie powinna ustawiać np. data[“name”] =
+“Janek”.
