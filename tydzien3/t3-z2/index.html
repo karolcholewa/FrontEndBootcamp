@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>t3-z2</title>
+</head>
+
+<body>
+
+	<h1>Abstrakcyjna baza danych z użyciem localStorage</h1>
+<p>Abstrakcja polega na tym, że użytkownik końcowy nie będzie korzystał bezpośrednio z localStorage (window.localStorage) tylko skorzysta z konstruktora localDB. Dzięki temu będzie mógł utworzyć nową bazę do której następnie może zapisać obiekt.</p>	
+	
+	<p>W nowo utworzonej bazie można zapisać pod kluczem ("key") obiekt, ale należy zserializować obiekt JSON na string; ponieważ localStorage przechowuje wyłącznie String. Ten obiekt można również odczytać - jako sparsowany JSON.</p>
+	<p>Nie wszystkie wartosci obiektu mozna serializowac; metody jako funkcje zostana usuniete. Wiąże się to z bezpieczeńtwem aby funkcji nie mozna było zapisać lokalnie na dysku u użytkownika.</p>
+
+	<script src="localdb.js"></script>
+
+	<script>
+		var DB1 = new localDB("DB1");
+
+		var carlito = {
+
+			firstName: "Karol",
+			lastName: "Cholewa",
+			age: 23, 
+			nationality: "PL",
+			getName: function(){
+				return this.firstName;
+			}
+		};
+
+		DB1.save("carlito", carlito);
+
+		var result = DB1.get("carlito");
+		console.log(result);
+	</script>
+
+</body>
+
+</html>
