@@ -1,5 +1,20 @@
 (function(){
 	
+	function storageAvailable(type) {
+	try {
+		var storage = window[type],
+			x = '__storage_test__';
+		storage.setItem(x, x);
+		storage.removeItem(x);
+		return true;
+	}
+	catch(e) {
+		return false;
+	}
+};
+	
+	if (storageAvailable('localStorage')) {
+		
 	//definiuje konstruktor    
     function localDB(name) {
         
@@ -18,5 +33,11 @@
 	}
 	
 	window.localDB = localDB;//Ponieważ cały skrypt zamknięty jest w funkcji oplatającej, do obiektu poza funkcją nalezy odwolac sie przez obiekt globalny. Dzięki temu przypisaniu w index.html możemy się odwołać do localDB a nie window.localDB
+}
+else {
+	alert("Przeglądarka lub tryb anonimowy nie wspierają localStorage.")
+}
+	
+	
     
 }());
