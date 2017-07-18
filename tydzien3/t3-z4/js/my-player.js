@@ -26,6 +26,8 @@
 		this.setCurrentVolume();
 
 	}
+	
+	//przypisujemy do poszczegolnych elementow zdarzenia, np. klikniecie w ten element, przeciągniecie
 
 	Player.prototype.assignEvents = function () {
 
